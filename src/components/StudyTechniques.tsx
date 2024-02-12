@@ -9,6 +9,7 @@ interface StudyTechniquesProps {
 const StudyTechniques: React.FC<StudyTechniquesProps> = ({ technique }) => {
     return (
      <IonItem routerLink={`/technique/${technique.id}`} detail={false}>
+     <div slot="start"></div>
               <IonLabel className="ion-text-wrap">
                 <h2>
                   {technique.name}
