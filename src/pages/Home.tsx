@@ -1,6 +1,6 @@
-import MessageListItem from '../components/MessageListItem';
+import StudyTechniques from '../components/StudyTechniques';
 import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Technique, getTechniques } from '../data/techniques';
 import {
   IonContent,
   IonHeader,
@@ -16,11 +16,11 @@ import './Home.css';
 
 const Home: React.FC = () => {
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [techniques, setTechniques] = useState<Technique[]>([]);
 
   useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
+    const tech = getTechniques();
+    setTechniques(tech);
   });
 
   const refresh = (e: CustomEvent) => {
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Methods</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -44,13 +44,13 @@ const Home: React.FC = () => {
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">
-              Inbox
+              Choice
             </IonTitle>
           </IonToolbar>
         </IonHeader>
 
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+            {techniques.map(t => <StudyTechniques key={t.id} technique={t} />)}
         </IonList>
       </IonContent>
     </IonPage>
