@@ -11,11 +11,12 @@ const StudyTechniques: React.FC<StudyTechniquesProps> = ({ technique }) => {
      <IonItem routerLink={`/technique/${technique.id}`} detail={false}>
      <div slot="start"></div>
               <IonLabel className="ion-text-wrap">
-                <h2>
+                <b>
                   {technique.name}
                   <span>
                   </span>
-                </h2>
+                </b>
+                <h3>{technique.shortDescription}</h3>
               </IonLabel>
             </IonItem>
       );

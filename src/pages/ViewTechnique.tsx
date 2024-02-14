@@ -31,15 +31,16 @@ function ViewTechnique() {
       <IonHeader translucent>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton text="Methods" defaultHref="/home"></IonBackButton>
+            <IonBackButton text="Home" defaultHref="/home"></IonBackButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-
       <IonContent fullscreen>
         {technique ? (
           <>
             <IonItem>
+             <div slot="start"></div>
+            <p>{technique.description}</p>
             </IonItem>
           </>
         ) : (
