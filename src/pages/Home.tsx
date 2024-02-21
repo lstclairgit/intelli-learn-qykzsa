@@ -4,15 +4,18 @@ import { Technique, getTechniques } from '../data/techniques';
 import {
   IonContent,
   IonHeader,
+  IonButtons,
   IonList,
   IonPage,
   IonRefresher,
+  IonIcon,
   IonRefresherContent,
   IonTitle,
   IonToolbar,
   useIonViewWillEnter
 } from '@ionic/react';
 import './Home.css';
+import { star } from 'ionicons/icons';
 
 const Home: React.FC = () => {
 
@@ -34,21 +37,17 @@ const Home: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Home</IonTitle>
+            <IonButton>
+             <IonIcon slot="icon-only" icon={star}></IonIcon>
+             </IonButton>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              Choice
-            </IonTitle>
-          </IonToolbar>
         </IonHeader>
-
         <IonList>
             {techniques.map(t => <StudyTechniques key={t.id} technique={t} />)}
         </IonList>
