@@ -1,10 +1,11 @@
 import StudyTechniques from '../components/StudyTechniques';
 import { useState } from 'react';
 import { Technique, getTechniques } from '../data/techniques';
+import { settings } from 'ionicons/icons';
 import {
   IonContent,
   IonHeader,
-  IonButtons,
+  IonButton,
   IonList,
   IonPage,
   IonRefresher,
@@ -15,7 +16,6 @@ import {
   useIonViewWillEnter
 } from '@ionic/react';
 import './Home.css';
-import { star } from 'ionicons/icons';
 
 const Home: React.FC = () => {
 
@@ -34,12 +34,12 @@ const Home: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader>
+      <IonHeader translucent>
         <IonToolbar>
           <IonTitle>Home</IonTitle>
-            <IonButton>
-             <IonIcon slot="icon-only" icon={star}></IonIcon>
-             </IonButton>
+          <IonButton slot = 'end' color = 'translucent'>
+            <IonIcon color = 'white' icon={settings}></IonIcon>
+           </IonButton>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
