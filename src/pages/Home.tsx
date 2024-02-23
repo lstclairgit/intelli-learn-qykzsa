@@ -5,8 +5,17 @@ import { settings } from 'ionicons/icons';
 import {
   IonContent,
   IonHeader,
+  IonCard,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonCardContent,
+  IonRouterLink,
   IonButton,
   IonList,
+  IonLabel,
+  IonThumbnail,
+  IonItem,
   IonPage,
   IonRefresher,
   IonIcon,
@@ -36,7 +45,7 @@ const Home: React.FC = () => {
     <IonPage id="home-page">
       <IonHeader translucent>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>Study Home</IonTitle>
           <IonButton slot = 'end' color = 'translucent'>
             <IonIcon color = 'white' icon={settings}></IonIcon>
            </IonButton>
@@ -48,9 +57,61 @@ const Home: React.FC = () => {
         </IonRefresher>
         <IonHeader collapse="condense">
         </IonHeader>
-        <IonList>
-            {techniques.map(t => <StudyTechniques key={t.id} technique={t} />)}
-        </IonList>
+        <IonCard>
+            <IonCardHeader>
+                <IonCardTitle>Promordo</IonCardTitle>
+                <IonCardSubtitle>25 min, 5 min</IonCardSubtitle>
+            </IonCardHeader>
+
+            <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                <IonRouterLink routerDirection="forward"> </IonRouterLink>
+                <IonButton routerLink={`/technique/${0}`} expand="block" fill="solid">START STUDYING</IonButton>
+
+            </IonCard>
+
+            <IonCard>
+                <IonCardHeader>
+                    <IonCardTitle>FlowTime</IonCardTitle>
+                    <IonCardSubtitle>Working Intervals</IonCardSubtitle>
+                </IonCardHeader>
+
+                <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                    <IonRouterLink routerDirection="forward"> </IonRouterLink>
+                    <IonButton routerLink={`/technique/${1}`} expand="block" fill="solid">START STUDYING</IonButton>
+                </IonCard>
+
+            <IonCard>
+                <IonCardHeader>
+                    <IonCardTitle>Active Recall</IonCardTitle>
+                    <IonCardSubtitle>Reiteration of your knowledge to yourself.</IonCardSubtitle>
+                </IonCardHeader>
+
+                 <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                    <IonRouterLink routerDirection="forward"> </IonRouterLink>
+                    <IonButton routerLink={`/technique/${2}`} expand="block" fill="solid">START STUDYING</IonButton>
+            </IonCard>
+
+            <IonCard>
+                <IonCardHeader>
+                    <IonCardTitle>Feynman Technique</IonCardTitle>
+                    <IonCardSubtitle>Teach to someone else!</IonCardSubtitle>
+                </IonCardHeader>
+
+                <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                    <IonRouterLink routerDirection="forward"> </IonRouterLink>
+                    <IonButton routerLink={`/technique/${3}`} expand="block" fill="solid">START STUDYING</IonButton>
+            </IonCard>
+
+            <IonCard>
+                <IonCardHeader>
+                    <IonCardTitle>52-17</IonCardTitle>
+                    <IonCardSubtitle>52 min, 17 min</IonCardSubtitle>
+                </IonCardHeader>
+
+                <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                    <IonRouterLink routerDirection="forward"> </IonRouterLink>
+                    <IonButton routerLink={`/technique/${4}`} expand="block" fill="solid">START STUDYING</IonButton>
+            </IonCard>
       </IonContent>
     </IonPage>
   );
