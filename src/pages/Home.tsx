@@ -83,7 +83,7 @@ const Home: React.FC = () => {
         <IonCard mode="ios">
           <IonCardHeader>
             <IonCardTitle>FlowTime</IonCardTitle>
-            <IonCardSubtitle>Working Intervals</IonCardSubtitle>
+            <IonCardSubtitle>Intervals</IonCardSubtitle>
           </IonCardHeader>
 
           <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
