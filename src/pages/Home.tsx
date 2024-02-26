@@ -12,7 +12,6 @@ import {
   IonCardContent,
   IonRouterLink,
   IonButton,
-  IonList,
   IonLabel,
   IonThumbnail,
   IonItem,
@@ -43,15 +42,15 @@ const Home: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader translucent>
+      <IonHeader translucent = {true}>
         <IonToolbar>
           <IonTitle>Study Home</IonTitle>
           <IonButton slot = 'end' color = 'translucent'>
-            <IonIcon color = 'white' icon={settings}></IonIcon>
+            <IonIcon icon={settings}></IonIcon>
            </IonButton>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen = {true}>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
@@ -59,14 +58,13 @@ const Home: React.FC = () => {
         </IonHeader>
         <IonCard>
             <IonCardHeader>
-                <IonCardTitle>Promordo</IonCardTitle>
+                <IonCardTitle>Pomodoro</IonCardTitle>
                 <IonCardSubtitle>25 min, 5 min</IonCardSubtitle>
             </IonCardHeader>
 
             <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
                 <IonRouterLink routerDirection="forward"> </IonRouterLink>
                 <IonButton routerLink={`/technique/${0}`} expand="block" fill="solid">START STUDYING</IonButton>
-
             </IonCard>
 
             <IonCard>
