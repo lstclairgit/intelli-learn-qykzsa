@@ -46,7 +46,7 @@ const Home: React.FC = () => {
         <IonToolbar>
           <IonTitle>Study Home</IonTitle>
           <IonButton slot = 'end' color = 'translucent'>
-            <IonIcon icon={settings}></IonIcon>
+            <IonIcon color = 'primary' icon={settings}></IonIcon>
            </IonButton>
         </IonToolbar>
       </IonHeader>
