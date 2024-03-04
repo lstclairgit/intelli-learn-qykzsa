@@ -15,7 +15,6 @@ function MyTimer({ expiryTimestamp }) {
     restart,
   } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
 
-
   return (
     <div style={{textAlign: 'center'}}>
       <h1>react-timer-hook </h1>
