@@ -37,6 +37,12 @@ const techniques: Technique[] = [
     description: "If you want to challenge yourself, pick a task to work on for 52 minutes with 17 minute breaks between rounds!",
     id: 4
   },
+  {
+    name: 'Settings',
+    shortDescription: "Settings Page",
+    description: "Settings Page",
+    id: 999
+  },
 ];
 
 export const getTechniques = () => techniques;

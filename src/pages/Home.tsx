@@ -45,7 +45,7 @@ const Home: React.FC = () => {
       <IonHeader translucent = {true}>
         <IonToolbar>
           <IonTitle>Study Home</IonTitle>
-          <IonButton slot = 'end' color = 'translucent'>
+          <IonButton routerLink={`/technique/${999}`} slot = 'end' color = 'translucent'>
             <IonIcon color = 'primary' icon={settings}></IonIcon>
            </IonButton>
         </IonToolbar>
