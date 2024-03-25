@@ -2,6 +2,9 @@ import StudyTechniques from '../components/StudyTechniques';
 import { useState } from 'react';
 import { Technique, getTechniques } from '../data/techniques';
 import { settings } from 'ionicons/icons';
+import { useTime } from 'react-timer-hook';
+import MyTimer from '../components/Timer';
+
 import {
   IonContent,
   IonHeader,
@@ -39,6 +42,14 @@ const Home: React.FC = () => {
       e.detail.complete();
     }, 3000);
   };
+
+  const expiryTimestamps = [
+    new Date(Date.now() + 25 * 60 * 1000), // 25 minutes for Pomodoro
+    new Date(Date.now() + 30 * 60 * 1000), // 30 minutes for FlowTime
+    new Date(Date.now() + 20 * 60 * 1000), // 20 minutes for Active Recall
+    new Date(Date.now() + 35 * 60 * 1000), // 35 minutes for Feynman Technique
+    new Date(Date.now() + 52 * 60 * 1000), // 52 minutes for 52-17
+  ];
 
   return (
     <IonPage id="home-page">

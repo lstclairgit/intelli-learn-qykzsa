@@ -1,9 +1,15 @@
-import React from 'react';
-import { useTimer } from 'react-timer-hook';
+import React from "react";
+import { useTimer } from "react-timer-hook";
 
-function MyTimer({ expiryTimestamp }) {
+interface MyTimerProps {
+  expiryTimestamp: Date; // Explicitly specifying the type as Date
+}
+
+
+
+function MyTimer({ expiryTimestamp }: MyTimerProps) {
   const {
-    totalSeconds,
+    
     seconds,
     minutes,
     hours,
