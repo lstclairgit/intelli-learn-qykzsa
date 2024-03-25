@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Technique, getTechnique } from '../data/techniques';
+import MyTimer from '../components/Timer';
 import {
   IonBackButton,
   IonButtons,
@@ -42,6 +43,7 @@ function ViewTechnique() {
              <div slot="start"></div>
             <p>{technique.description}</p>
             </IonItem>
+            <MyTimer></MyTimer>
           </>
         ) : (
           <div>Technique not found</div>
