@@ -45,9 +45,8 @@ const Home: React.FC = () => {
 
   const expiryTimestamps = [
     new Date(Date.now() + 25 * 60 * 1000), // 25 minutes for Pomodoro
-    new Date(Date.now() + 30 * 60 * 1000), // 30 minutes for FlowTime
     new Date(Date.now() + 20 * 60 * 1000), // 20 minutes for Active Recall
-    new Date(Date.now() + 35 * 60 * 1000), // 35 minutes for Feynman Technique
+    new Date(Date.now() + 35 * 60 * 1000), // 10 minutes for Feynman Technique
     new Date(Date.now() + 52 * 60 * 1000), // 52 minutes for 52-17
   ];
 
@@ -80,24 +79,13 @@ const Home: React.FC = () => {
 
             <IonCard>
                 <IonCardHeader>
-                    <IonCardTitle>FlowTime</IonCardTitle>
-                    <IonCardSubtitle>Working Intervals</IonCardSubtitle>
-                </IonCardHeader>
-
-                <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
-                    <IonRouterLink routerDirection="forward"> </IonRouterLink>
-                    <IonButton routerLink={`/technique/${1}`} expand="block" fill="solid">START STUDYING</IonButton>
-                </IonCard>
-
-            <IonCard>
-                <IonCardHeader>
                     <IonCardTitle>Active Recall</IonCardTitle>
                     <IonCardSubtitle>Reiteration of your knowledge to yourself.</IonCardSubtitle>
                 </IonCardHeader>
 
                  <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
                     <IonRouterLink routerDirection="forward"> </IonRouterLink>
-                    <IonButton routerLink={`/technique/${2}`} expand="block" fill="solid">START STUDYING</IonButton>
+                    <IonButton routerLink={`/technique/${1}`} expand="block" fill="solid">START STUDYING</IonButton>
             </IonCard>
 
             <IonCard>
@@ -108,7 +96,7 @@ const Home: React.FC = () => {
 
                 <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
                     <IonRouterLink routerDirection="forward"> </IonRouterLink>
-                    <IonButton routerLink={`/technique/${3}`} expand="block" fill="solid">START STUDYING</IonButton>
+                    <IonButton routerLink={`/technique/${2}`} expand="block" fill="solid">START STUDYING</IonButton>
             </IonCard>
 
             <IonCard>
@@ -119,7 +107,7 @@ const Home: React.FC = () => {
 
                 <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
                     <IonRouterLink routerDirection="forward"> </IonRouterLink>
-                    <IonButton routerLink={`/technique/${4}`} expand="block" fill="solid">START STUDYING</IonButton>
+                    <IonButton routerLink={`/technique/${3}`} expand="block" fill="solid">START STUDYING</IonButton>
             </IonCard>
       </IonContent>
     </IonPage>

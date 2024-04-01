@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Technique, getTechnique } from '../data/techniques';
-import MyTimer from '../components/Timer';
+import { Technique, getTechnique, getTimeLength } from '../data/techniques';
+import Timer from '../components/Timer';
 import {
   IonBackButton,
   IonButtons,
@@ -19,12 +19,15 @@ import { useParams } from 'react-router';
 import './ViewTechnique.css';
 
 function ViewTechnique() {
-  const [technique, setTechnique] = useState<Technique>();
+  const [technique, setTechnique, setTimeLength] = useState<Technique>();
   const params = useParams<{ id: string }>();
+  const timer = useParams<{ timeLength: number }>();
 
   useIonViewWillEnter(() => {
     const tech = getTechnique(parseInt(params.id, 10));
+    const time = getTimeLength(parseInt(params.timeLength, 25));
     setTechnique(tech);
+    setTimeLength(time);
   });
 
   return (
@@ -40,10 +43,13 @@ function ViewTechnique() {
         {technique ? (
           <>
             <IonItem>
-             <div slot="start"></div>
             <p>{technique.description}</p>
+
+            <p>{technique.timeLength}</p>
             </IonItem>
-            <MyTimer></MyTimer>
+
+
+            <Timer></Timer>
           </>
         ) : (
           <div>Technique not found</div>
@@ -52,5 +58,6 @@ function ViewTechnique() {
     </IonPage>
   );
 }
+
 
 export default ViewTechnique;
