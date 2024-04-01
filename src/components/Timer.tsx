@@ -23,41 +23,41 @@ function MyTimer({ expiryTimestamp }: MyTimerProps) {
 
   return (
     <div style={{textAlign: 'center'}}>
-      <h1>Timer</h1>
+      <h1> </h1>
       <div style={{fontSize: '50px'}}>
-        <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+        <span>{minutes}</span>:<span>{seconds}</span>
       </div>
       <p>{isRunning ? 'Running' : 'Not running'}</p>
        <IonItem>
-        <IonButton class = 'center-button' onClick = {start}> Start </IonButton>
+        <IonButton className = 'center-button' onClick = {start}> Start </IonButton>
        </IonItem>
        <IonItem>
-        <IonButton class = 'center-button' onClick = {pause}> Pause </IonButton>
+        <IonButton className = 'center-button' onClick = {pause}> Pause </IonButton>
        </IonItem>
        <IonItem>
-        <IonButton class = "center-button" onClick = {resume}> Resume </IonButton>
+        <IonButton className = "center-button" onClick = {resume}> Resume </IonButton>
        </IonItem>
        <IonItem>
-        <IonButton class = "center-button" onClick = {restart}> Restart </IonButton>
+        <IonButton className = "center-button" onClick = {restart}> Restart </IonButton>
         </IonItem>
 
 
       <button onClick={() => {
         // Restarts to 5 minutes timer
         const time = new Date();
-        time.setSeconds(time.getSeconds() + 300);
+        time.setMinutes(time.getMinutes() + 5);
         restart(time)
       }}>Restart</button>
     </div>
   );
 }
 
-export default function App() {
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 600); // 10 minutes timer
+export default function Timer() {
+ const time = new Date();
+  time.setMinutes(time.getMinutes() + 25); // 25 minutes timer
   return (
     <div>
       <MyTimer expiryTimestamp={time} />
     </div>
   );
-}``
+}

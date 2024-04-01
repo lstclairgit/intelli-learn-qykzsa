@@ -20,9 +20,6 @@ const StudyTechniques: React.FC<StudyTechniquesProps> = ({ technique }) => {
                 <h3>{technique.shortDescription}</h3>
                 
               </IonLabel>
-              <IonItem>
-              <MyTimer></MyTimer>
-              </IonItem>
             </IonItem>
       );
     };
