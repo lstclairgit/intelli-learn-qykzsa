@@ -17,6 +17,7 @@ import {
 import { ellipseOutline } from 'ionicons/icons';
 import { useParams } from 'react-router';
 import './ViewTechnique.css';
+import { useTimer } from 'react-timer-hook';
 
 function ViewTechnique() {
   const [technique, setTechnique, setTimeLength] = useState<Technique>();
@@ -42,14 +43,20 @@ function ViewTechnique() {
       <IonContent fullscreen>
         {technique ? (
           <>
+           
+              <b className='center'>{technique.name}</b>
+            
             <IonItem>
             <p>{technique.description}</p>
 
             <p>{technique.timeLength}</p>
             </IonItem>
+            
 
+            <Timer timeLength={technique.timeLength}></Timer>
+            
+            
 
-            <Timer></Timer>
           </>
         ) : (
           <div>Technique not found</div>
