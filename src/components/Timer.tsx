@@ -52,12 +52,14 @@ function MyTimer({ expiryTimestamp }: MyTimerProps) {
   );
 }
 
-export default function Timer() {
- const time = new Date();
-  time.setMinutes(time.getMinutes() + 25); // 25 minutes timer
-  return (
-    <div>
-      <MyTimer expiryTimestamp={time} />
-    </div>
-  );
-}
+export default function Timer({ timeLength = 25 }) { // Default to 25 minutes if no prop passed
+
+  const time = new Date();
+
+   time.setMinutes(time.getMinutes() + timeLength);
+   return (
+     <div>
+       <MyTimer expiryTimestamp={time} />
+     </div>
+   );
+ }
