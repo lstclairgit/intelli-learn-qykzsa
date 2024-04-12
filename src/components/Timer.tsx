@@ -2,6 +2,7 @@ import React from "react";
 import { IonButton, IonItem } from "@ionic/react";
 import { useTimer } from "react-timer-hook";
 import "./Timer.css";
+import '../data/techniques';
 
 interface MyTimerProps {
   expiryTimestamp: Date; // Explicitly specifying the type as Date
@@ -37,17 +38,22 @@ function MyTimer({ expiryTimestamp }: MyTimerProps) {
        <IonItem>
         <IonButton className = "center-button" onClick = {resume}> Resume </IonButton>
        </IonItem>
-       <IonItem>
-        <IonButton className = "center-button" onClick = {restart}> Restart </IonButton>
-        </IonItem>
+       <IonButton onClick={() => {
+            const newExpiryTimestamp = new Date();
+            newExpiryTimestamp.setSeconds(newExpiryTimestamp.getSeconds() + 5 * 60); // Adds 5 minutes to the current time
+            restart(newExpiryTimestamp, true); // Optionally, auto-start the timer
+          }}>
+            Restart Break
+        </IonButton>
 
 
-      <button onClick={() => {
+
+      <IonButton onClick ={() => {
         // Restarts to 5 minutes timer
         const time = new Date();
-        time.setMinutes(time.getMinutes() + 5);
+        time.setMinutes(time.getMinutes() + 5 );
         restart(time)
-      }}>Restart</button>
+      }}>Break</IonButton>
     </div>
   );
 }

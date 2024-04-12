@@ -44,12 +44,12 @@ function ViewTechnique() {
         {technique ? (
           <>
            
-              <b className='center'>{technique.name}</b>
+           <div className="center"><b>{technique.name}</b></div>
             
             <IonItem>
             <p>{technique.description}</p>
 
-            <p>{technique.timeLength}</p>
+    
             </IonItem>
             
 

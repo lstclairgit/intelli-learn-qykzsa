@@ -50,6 +50,8 @@
 }
 
 .center {
-  
-  
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px; /* Adjust size as needed */
+  margin-top: 20px; /* Adjust the top margin as needed */
 }
